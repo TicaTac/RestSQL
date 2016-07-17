@@ -16,7 +16,7 @@ public class MySQLDbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createCommand = "CREATE TABLE "+
                 DBConstants.DATABASE_TABLE+
-                " "+"VeganRest ( _id    INTEGER PRIMARY KEY AUTOINCREMENT," +
+                " ( _id    INTEGER PRIMARY KEY AUTOINCREMENT," +
                 " "+ DBConstants.REST_NAME +" TEXT," +
                 " "+ DBConstants.REST_ADDRESS+" TEXT, " +
                 " "+ DBConstants.IS_VEGAN+" INTEGER)";

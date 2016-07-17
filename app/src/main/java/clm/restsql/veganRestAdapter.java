@@ -39,9 +39,15 @@ public class veganRestAdapter extends ArrayAdapter<veganRest> {
         TextView addressTV = (TextView) v.findViewById(R.id.addressTV);
         ImageView image = (ImageView) v.findViewById(R.id.veganIV);
 
+        nameTV.setText(currentRest.getRestname());
+        addressTV.setText(currentRest.getAddress());
 
-
-
+        /*if (currentRest.isVegan()){
+            image.setImageResource(R.drawable.vegan) ;
+        }
+        else {
+            image.setImageResource(R.drawable.friendly) ;
+        } */
         return v;
     }
 }
