@@ -8,24 +8,14 @@ public class veganRest {
     String restname;
     String address;
     boolean friendly;
-    int Pic;
 
-//// CTOR/////
-    public veganRest(String restname, String address, boolean friendly, int pic) {
+    //// CTOR/////
+    public veganRest(String restname, String address, boolean friendly) {
         this.restname = restname;
         this.address = address;
         this.friendly = friendly;
-        Pic = pic;
     }
 ///////////////
-
-    public int getPic() {
-        return Pic;
-    }
-
-    public void setPic(int pic) {
-        Pic = pic;
-    }
 
     public String getRestname() {
 
@@ -44,8 +34,13 @@ public class veganRest {
         this.address = address;
     }
 
-    public Boolean getFriendly() {
+    public Boolean isVegan() {
         return friendly;
+    }
+
+    @Override
+    public String toString() {
+        return restname+" "+address+" Friendly:"+friendly;
     }
 
     public void setFriendly(Boolean friendly) {

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,17 +28,22 @@ public class MainActivity extends AppCompatActivity {
         Button addBTN = (Button) findViewById(R.id.addBTN);
         addBTN.setOnClickListener(new View.OnClickListener() {
             @Override
+            ///////////// ADD TO DATABASE /////////////
             public void onClick(View v) {
                 EditText nameET = (EditText) findViewById(R.id.nameET);
                 EditText addressET = (EditText) findViewById(R.id.addressET);
                 EditText veganET= (EditText) findViewById(R.id.veganET);
 
-                MyDbHelper db= new MyDbHelper(MainActivity.this);
+                veganRest Restraunt=
+                        new veganRest(nameET.getText().toString(),addressET.getText().toString(), (veganET.getText().toString().equals("1")));
 
-                String query = "INSERT INTO VeganRest (Name , Address , Friendly) VALUES (‘"+nameET.getText()+"’ ,’ "+ addressET.getText()+"’, "+veganET.getText()+");";
-                Toast.makeText(MainActivity.this, query, Toast.LENGTH_LONG).show();
-                db.getWritableDatabase().execSQL(query);
-                Toast.makeText(MainActivity.this, query, Toast.LENGTH_LONG).show();
+                MyDbCommands db= new MyDbCommands(MainActivity.this);
+                // TODONE parse query for INSERT - database - VeganRest
+                // String query = "INSERT INTO VeganRest (Name , Address , isVegan) VALUES (‘"+nameET.getText()+"’ ,’ "+ addressET.getText()+"’, "+veganET.getText()+");";
+
+                db.addRestraunt(Restraunt);
+
+                Toast.makeText(MainActivity.this, "added: "+Restraunt.toString(), Toast.LENGTH_LONG).show();
             }
         });
 

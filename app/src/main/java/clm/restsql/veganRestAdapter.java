@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -33,7 +34,12 @@ public class veganRestAdapter extends ArrayAdapter<veganRest> {
         }
         veganRest currentRest = veganRestraunts.get(position);
         // catch layout items & link to Array list
-//        (TextView)
+
+        TextView nameTV = (TextView) v.findViewById(R.id.nameTV);
+        TextView addressTV = (TextView) v.findViewById(R.id.addressTV);
+        ImageView image = (ImageView) v.findViewById(R.id.veganIV);
+
+
 
 
         return v;
